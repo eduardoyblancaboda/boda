@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24 Aniversario - Eduardo y Blanca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="audio-container">
+        <audio id="background-music" loop>
+            <source src="cancion.mp3" type="audio/mpeg">
+        </audio>
+        <button onclick="togglePlay()" id="audioBtn" class="audio-control">♫ ESCUCHAR MÚSICA</button>
+    </div>
+
+    <section class="page-view">
+        <main class="invitation-card">
+            <div class="floral-frame"></div>
+
+            <section class="content">
+                <div class="names-wrapper">
+                    <h1 class="elegant-name anim-1">Eduardo</h1>
+                    <span class="ampersand anim-fade">&</span>
+                    <h1 class="elegant-name anim-2">Blanca</h1>
+                </div>
+
+                <div class="details-section">
+                    <div class="anniversary-badge">Celebrando 24 años de casados</div>
+                    <div class="event-info">
+                        <p>SÁBADO, 25 DE OCTUBRE, 2025</p>
+                        <p>14:00 HORAS</p>
+                        <address>THE PLAZA HOTEL, NY</address>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="scroll-hint">Desliza para ver más ↓</div>
+    </section>
+
+    <section class="page-view gallery-bg">
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="slide"><img src="foto1.jpg" alt="Foto 1"></div>
+                <div class="slide"><img src="foto2.jpg" alt="Foto 2"></div>
+                <div class="slide"><img src="foto3.jpg" alt="Foto 3"></div>
+                <div class="slide"><img src="foto1.jpg" alt="Foto 1"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function togglePlay() {
+            const audio = document.getElementById("background-music");
+            const btn = document.getElementById("audioBtn");
+            if (audio.paused) { audio.play(); btn.innerHTML = "|| PAUSAR MÚSICA"; }
+            else { audio.pause(); btn.innerHTML = "♫ ESCUCHAR MÚSICA"; }
+        }
+    </script>
+</body>
+</html>
