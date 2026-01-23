@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>24 Aniversario - Eduardo y Blanca</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Boda de Plata - Eduardo y Blanca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,50 +12,54 @@
     <div class="audio-container">
         <audio id="background-music" loop>
             <source src="cancion.mp3" type="audio/mpeg">
+            Tu navegador no soporta el audio.
         </audio>
-        <button onclick="togglePlay()" id="audioBtn" class="audio-control">♫ ESCUCHAR MÚSICA</button>
+        <button onclick="togglePlay()" id="audioBtn" class="audio-control">
+            ♫ ESCUCHAR MÚSICA
+        </button>
     </div>
 
-    <section class="hero-view">
-        <div class="floral-overlay"></div> <div class="main-content">
+    <main class="invitation-card">
+        <div class="floral top-right"></div>
+        <div class="floral bottom-left"></div>
+
+        <section class="content">
             <div class="names-wrapper">
-                <h1 class="elegant-name anim-name-1">Eduardo</h1>
+                <h1 class="elegant-name anim-1">Eduardo</h1>
                 <span class="ampersand anim-fade">&</span>
-                <h1 class="elegant-name anim-name-2">Blanca</h1>
+                <h1 class="elegant-name anim-2">Blanca</h1>
             </div>
 
-            <div class="details-section anim-details">
+            <div class="details-fade">
                 <div class="anniversary-badge">Celebrando 24 años de casados</div>
-                <div class="event-info">
-                    <p>SÁBADO, 25 DE OCTUBRE, 2025</p>
-                    <p>14:00 HORAS</p>
-                    <address>THE PLAZA HOTEL, NY</address>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-down-hint">Desliza para ver la galería ↓</div>
-    </section>
 
-    <section class="gallery-view">
-        <div class="carousel-track">
-            <img src="foto1.jpg" alt="1">
-            <img src="foto2.jpg" alt="2">
-            <img src="foto3.jpg" alt="3">
-            <img src="foto4.jpg" alt="4">
-            <img src="foto1.jpg" alt="1">
-            <img src="foto2.jpg" alt="2">
-            <img src="foto3.jpg" alt="3">
-            <img src="foto4.jpg" alt="4">
-        </div>
-    </section>
+                <div class="event-info">
+                    <p class="date">Sábado, 25 de Octubre, 2025</p>
+                    <p class="time">14:00 Horas</p>
+                    <address class="location">
+                        The Plaza Hotel<br>
+                        Brooklyn, New York
+                    </address>
+                </div>
+                
+                <footer class="footer-text">Recepción a continuación</footer>
+            </div>
+        </section>
+    </main>
 
     <script>
         function togglePlay() {
             const audio = document.getElementById("background-music");
             const btn = document.getElementById("audioBtn");
-            if (audio.paused) { audio.play(); btn.innerHTML = "|| PAUSAR MÚSICA"; }
-            else { audio.pause(); btn.innerHTML = "♫ ESCUCHAR MÚSICA"; }
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = "|| PAUSAR MÚSICA";
+            } else {
+                audio.pause();
+                btn.innerHTML = "♫ ESCUCHAR MÚSICA";
+            }
         }
     </script>
 </body>
 </html>
+
