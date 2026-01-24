@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>25 Aniversario - Eduardo y Blanca</title>
+    <title>24 Aniversario - Eduardo y Blanca</title>
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,51 +17,74 @@
     </div>
 
     <section class="hero-view">
-        <div class="floral-overlay"></div> <div class="main-content">
+        <div class="floral-overlay"></div> 
+        <div class="main-content">
             <div class="names-wrapper">
                 <h1 class="elegant-name anim-name-1">Eduardo</h1>
-                <span class="ampersand anim-fade">y</span>
+                <span class="ampersand anim-fade">&</span>
                 <h1 class="elegant-name anim-name-2">Blanca</h1>
             </div>
 
             <div class="details-section anim-details">
-                <div class="anniversary-badge">Celebrando 25 años de casados</div>
+                <div class="anniversary-badge">Celebrando 24 años de casados</div>
                 <div class="event-info">
-                    <p>2 DE MAYO, 2026</p>
+                    <p>SÁBADO, 25 DE OCTUBRE, 2025</p>
                     <p>14:00 HORAS</p>
-                    <address>LAGO WINNIPEG 106, CD NEZAHUALCOYOTL</address>
+                    <address>NEW YORK CITY</address>
                 </div>
             </div>
         </div>
-        <div class="scroll-down-hint">Desliza para ver la foto ↓</div>
+        <div class="scroll-down-hint">Desliza para ver más ↓</div>
     </section>
 
     <section class="photo-section">
         <div class="photo-container anim-details">
             <div class="photo-frame">
-                <img src="foto4.jpg" alt="Eduardo y Blanca" class="couple-img">
+                <img src="foto-novios.jpg" alt="Eduardo y Blanca" class="couple-img">
                 <div class="photo-caption">
-                    <p class="caption-names">Eduardo y Blanca</p>
+                    <p class="caption-names">Eduardo & Blanca</p>
                     <p class="caption-date">Bodas de Plata</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="locations-section">
+        <div class="location-container anim-details">
+            <div class="location-card">
+                <div class="location-icon">⛪</div>
+                <h2 class="elegant-subtitle">Ceremonia Religiosa</h2>
+                <p class="location-name">Parroquia de San Ignacio</p>
+                <p class="location-time">14:00 Horas</p>
+                <p class="location-address">Calle Principal #123, NY</p>
+                <a href="#" target="_blank" class="maps-button">VER UBICACIÓN</a>
+            </div>
+
+            <div class="location-card">
+                <div class="location-icon">🥂</div>
+                <h2 class="elegant-subtitle">Recepción</h2>
+                <p class="location-name">The Plaza Hotel</p>
+                <p class="location-time">16:00 Horas</p>
+                <p class="location-address">768 5th Ave, New York, NY</p>
+                <a href="#" target="_blank" class="maps-button">VER UBICACIÓN</a>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/TUNUMERO?text=Hola!%20Confirmamos%20asistencia." class="whatsapp-btn" target="_blank">
+        CONFIRMAR ASISTENCIA
+    </a>
+
     <script>
         function togglePlay() {
             const audio = document.getElementById("background-music");
             const btn = document.getElementById("audioBtn");
-            if (audio.paused) { 
-                audio.play(); 
-                btn.innerHTML = "|| PAUSAR MÚSICA"; 
-            } else { 
-                audio.pause(); 
-                btn.innerHTML = "♫ ESCUCHAR MÚSICA"; 
-            }
+            if (audio.paused) { audio.play(); btn.innerHTML = "|| PAUSAR MÚSICA"; }
+            else { audio.pause(); btn.innerHTML = "♫ ESCUCHAR MÚSICA"; }
         }
     </script>
 </body>
 </html>
+
 
 
