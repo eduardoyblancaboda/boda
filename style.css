@@ -8,7 +8,7 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* --- PORTADA INMERSIVA --- */
+/* --- PORTADA HERO --- */
 .hero-view {
     width: 100%; height: 100vh;
     display: flex; justify-content: center; align-items: center;
@@ -18,7 +18,7 @@ body, html {
 .floral-overlay {
     position: absolute; top: 0; left: 0;
     width: 100%; height: 100%;
-    background-image: url('tu-imagen.png'); /* Tu marco PNG */
+    background-image: url('flores.png'); /* Reemplaza con tu archivo */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,7 +30,7 @@ body, html {
     text-align: center; width: 90%;
 }
 
-/* --- ESTÉTICA DE NOMBRES (ANIMADOS) --- */
+/* --- ESTÉTICA DE NOMBRES --- */
 .names-wrapper { margin-left: -5%; margin-bottom: 2rem; }
 
 .elegant-name {
@@ -45,7 +45,50 @@ body, html {
     color: #a68b6d; display: block; margin: 10px 0;
 }
 
-/* --- ANIMACIONES DE ENTRADA AL CARGAR --- */
+/* --- SECCIÓN DE FOTO DELIMITADA --- */
+.photo-section {
+    width: 100%; min-height: 100vh;
+    background-color: #f9f9f9;
+    display: flex; justify-content: center; align-items: center;
+    padding: 60px 20px;
+}
+
+.photo-frame {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    border: 1px solid #eee;
+    border-radius: 2px;
+    max-width: 550px;
+    width: 100%;
+    transform: rotate(-1deg);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.couple-img {
+    width: 100%; height: auto;
+    display: block;
+}
+
+.photo-caption {
+    text-align: center; padding-top: 25px;
+}
+
+.caption-names {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.8rem; color: #3e4e41; margin: 0;
+}
+
+.caption-date {
+    font-size: 0.7rem; letter-spacing: 4px;
+    text-transform: uppercase; color: #a68b6d; margin-top: 8px;
+}
+
+/* --- ANIMACIONES --- */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
@@ -61,51 +104,25 @@ body, html {
 .anim-name-2 { opacity: 0; animation: fadeInUp 1.8s ease-out 2.2s forwards; }
 .anim-details { opacity: 0; animation: fadeIn 2.5s ease-out 3.5s forwards; }
 
-/* --- DETALLES --- */
-.anniversary-badge { color: #a68b6d; font-size: clamp(1rem, 3vw, 1.3rem); font-style: italic; margin-bottom: 1.5rem; }
-.event-info { letter-spacing: 3px; text-transform: uppercase; color: #3e4e41; font-size: clamp(0.7rem, 2.5vw, 0.9rem); line-height: 2; }
-
-/* --- CARRUSEL PEGADO --- */
-.gallery-view {
-    width: 100%; height: 100vh;
-    background: #000; overflow: hidden;
-    display: flex; align-items: center;
-}
-
-.carousel-track {
-    display: flex; width: max-content;
-    animation: scrollContinuous 35s linear infinite;
-}
-
-.carousel-track img {
-    height: 100vh; width: auto;
-    object-fit: cover; display: block; margin: 0;
-}
-
-@keyframes scrollContinuous {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-/* --- CONTROLES Y HINTS --- */
+/* --- CONTROLES --- */
 .audio-container { position: fixed; bottom: 30px; left: 30px; z-index: 1000; }
 .audio-control {
     background: white; border: 1px solid #a68b6d; color: #a68b6d;
     padding: 12px 24px; border-radius: 50px; cursor: pointer; font-size: 0.75rem;
-    transition: 0.3s;
 }
-.audio-control:hover { background: #a68b6d; color: white; }
 
 .scroll-down-hint {
     position: absolute; bottom: 25px; color: #a68b6d;
-    font-size: 0.8rem; letter-spacing: 2px;
-    animation: bounce 2s infinite;
+    font-size: 0.8rem; letter-spacing: 2px; animation: bounce 2s infinite;
 }
 @keyframes bounce { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-8px);} }
 
-/* RESPONSIVO */
+/* AJUSTES RESPONSIVOS */
 @media (max-width: 600px) {
     .elegant-name { font-size: 4.5rem; }
     .names-wrapper { margin-left: -15px; }
+    .photo-frame { transform: rotate(0); padding: 15px; }
+    .caption-names { font-size: 2.2rem; }
 }
+
 
