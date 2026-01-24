@@ -20,32 +20,31 @@
         <div class="floral-overlay"></div> <div class="main-content">
             <div class="names-wrapper">
                 <h1 class="elegant-name anim-name-1">Eduardo</h1>
-                <span class="ampersand anim-fade">y</span>
+                <span class="ampersand anim-fade">&</span>
                 <h1 class="elegant-name anim-name-2">Blanca</h1>
             </div>
 
             <div class="details-section anim-details">
-                <div class="anniversary-badge">Celebrando 25 años de casados</div>
+                <div class="anniversary-badge">Celebrando 24 años de casados</div>
                 <div class="event-info">
-                    <p>Mayo, 2025</p>
+                    <p>SÁBADO, 25 DE OCTUBRE, 2025</p>
                     <p>14:00 HORAS</p>
-                    <address>Lago Winnipeg 106, Cd Nezahualcoyotl</address>
+                    <address>THE PLAZA HOTEL, NY</address>
                 </div>
             </div>
         </div>
-        <div class="scroll-down-hint">Desliza para ver la galería ↓</div>
+        <div class="scroll-down-hint">Desliza para ver la foto ↓</div>
     </section>
 
-    <section class="gallery-view">
-        <div class="carousel-track">
-            <img src="foto1.jpg" alt="1">
-            <img src="foto2.jpg" alt="2">
-            <img src="foto3.jpg" alt="3">
-            <img src="foto4.jpg" alt="4">
-            <img src="foto1.jpg" alt="1">
-            <img src="foto2.jpg" alt="2">
-            <img src="foto3.jpg" alt="3">
-            <img src="foto4.jpg" alt="4">
+    <section class="photo-section">
+        <div class="photo-container anim-details">
+            <div class="photo-frame">
+                <img src="foto4.jpg" alt="Eduardo y Blanca" class="couple-img">
+                <div class="photo-caption">
+                    <p class="caption-names">Eduardo & Blanca</p>
+                    <p class="caption-date">Bodas de Plata</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -53,8 +52,13 @@
         function togglePlay() {
             const audio = document.getElementById("background-music");
             const btn = document.getElementById("audioBtn");
-            if (audio.paused) { audio.play(); btn.innerHTML = "|| PAUSAR MÚSICA"; }
-            else { audio.pause(); btn.innerHTML = "♫ ESCUCHAR MÚSICA"; }
+            if (audio.paused) { 
+                audio.play(); 
+                btn.innerHTML = "|| PAUSAR MÚSICA"; 
+            } else { 
+                audio.pause(); 
+                btn.innerHTML = "♫ ESCUCHAR MÚSICA"; 
+            }
         }
     </script>
 </body>
