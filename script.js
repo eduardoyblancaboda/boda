@@ -22,17 +22,24 @@ const lightboxImg = document.getElementById("lightbox-img");
 
 function openLightbox(src) {
     lightboxImg.src = src;
-    lightbox.classList.add("active");
-    // Bloquea el scroll del fondo
+    // Agregamos un pequeñísimo retraso para que el navegador renderice la imagen antes de animar
+    setTimeout(() => {
+        lightbox.classList.add("active");
+    }, 10);
     document.body.style.overflow = "hidden";
 }
 
 function closeLightbox() {
     lightbox.classList.remove("active");
-    // Restablece el scroll
     document.body.style.overflow = "auto";
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll('.gallery-img');
+    images.forEach(image => {
+        image.addEventListener('click', () => openLightbox(image.src));
+    });
+});
 // Asignar eventos de clic a las imágenes de la galería al cargar el DOM
 document.addEventListener("DOMContentLoaded", () => {
     const images = document.querySelectorAll('.gallery-img');
