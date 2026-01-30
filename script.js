@@ -6,7 +6,7 @@ function togglePlay() {
     const btn = document.getElementById("audioBtn");
 
     if (audio.paused) {
-        audio.play();
+        audio.play().catch(e => console.log("El navegador bloqueó el inicio automático."));
         btn.innerHTML = "|| PAUSAR MÚSICA";
     } else {
         audio.pause();
@@ -22,7 +22,7 @@ const lightboxImg = document.getElementById("lightbox-img");
 
 function openLightbox(src) {
     lightboxImg.src = src;
-    // Agregamos un pequeñísimo retraso para que el navegador renderice la imagen antes de animar
+    // Pequeño retraso para asegurar que la transición CSS se note
     setTimeout(() => {
         lightbox.classList.add("active");
     }, 10);
@@ -34,19 +34,20 @@ function closeLightbox() {
     document.body.style.overflow = "auto";
 }
 
+/**
+ * Inicialización de eventos
+ */
 document.addEventListener("DOMContentLoaded", () => {
+    // Configurar clics en galería
     const images = document.querySelectorAll('.gallery-img');
-    images.forEach(image => {
-        image.addEventListener('click', () => openLightbox(image.src));
-    });
-});
-// Asignar eventos de clic a las imágenes de la galería al cargar el DOM
-document.addEventListener("DOMContentLoaded", () => {
-    const images = document.querySelectorAll('.gallery-img');
-    
     images.forEach(image => {
         image.addEventListener('click', (e) => {
             openLightbox(e.target.src);
         });
+    });
+
+    // Cerrar lightbox con tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") closeLightbox();
     });
 });
