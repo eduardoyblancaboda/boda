@@ -84,40 +84,13 @@
         </div>
     </section>
 
-    <section class="timeline-section anim-details">
+    <section class="gallery-section anim-details">
         <h2 class="elegant-subtitle">Nosotros</h2>
-        <div class="timeline-container">
-            
-            <div class="timeline-item">
-                <div class="timeline-photo">
-                    <img src="novios1.jpeg">
-                    <span class="timeline-year"></span>
-                </div>
-                <div class="timeline-text">
-                   
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-photo">
-                    <img src="novios2.jpeg">
-                    <span class="timeline-year"></span>
-                </div>
-                <div class="timeline-text">
-                    
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-photo">
-                    <img src="novios3.jpeg">
-                    <span class="timeline-year"></span>
-                </div>
-                <div class="timeline-text">
-                    
-                </div>
-            </div>
-
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="novios1.jpeg" class="gallery-img"></div>
+            <div class="gallery-item"><img src="novios2.jpeg" class="gallery-img"></div>
+            <div class="gallery-item"><img src="novios3.jpeg" class="gallery-img"></div>
+            <div class="gallery-item"><img src="novios4.jpeg" class="gallery-img"></div>
         </div>
     </section>
 
@@ -127,14 +100,12 @@
         </a>
     </section>
 
-    <script>
-        function togglePlay() {
-            const audio = document.getElementById("background-music");
-            const btn = document.getElementById("audioBtn");
-            if (audio.paused) { audio.play(); btn.innerHTML = "|| PAUSAR MÚSICA"; }
-            else { audio.pause(); btn.innerHTML = "♫ ESCUCHAR MÚSICA"; }
-        }
-    </script>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">×</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
 
