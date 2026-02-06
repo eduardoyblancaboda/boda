@@ -1,12 +1,16 @@
-/* --- CONFIGURACIÓN GLOBAL --- */
-* { box-sizing: border-box; }
-body, html {
+/* --- CONFIGURACIÓN GLOBAL Y FIX DE SCROLL --- */
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
     margin: 0; padding: 0;
-    width: 100%; overflow-x: hidden;
-    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     color: #3e4e41;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* --- PORTADA --- */
@@ -18,101 +22,100 @@ body, html {
 .floral-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-image: url('flores.png'); background-size: cover;
-    z-index: 1; pointer-events: none; opacity: 0.5;
-    transition: transform 0.2s ease-out;
+    z-index: 0; pointer-events: none; opacity: 0.5;
+    will-change: transform;
 }
 .main-content { position: relative; z-index: 2; text-align: center; }
 
 .elegant-name {
     font-family: 'Pinyon Script', cursive;
-    font-size: clamp(4rem, 18vw, 7.5rem);
+    font-size: clamp(3.5rem, 15vw, 7.5rem);
     color: #3e4e41; line-height: 0.8; font-weight: 400; margin: 0;
 }
 .ampersand {
     font-family: 'Pinyon Script', cursive;
-    font-size: clamp(2.5rem, 10vw, 4rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     color: #a68b6d; display: block; margin: 10px 0;
 }
-.anniversary-badge { color: #a68b6d; font-style: italic; font-size: 1.2rem; }
-.event-info { letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; }
+.anniversary-badge { color: #a68b6d; font-style: italic; font-size: 1.1rem; }
+.event-info { letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin-top: 15px; }
 
 /* --- TÍTULOS --- */
 .elegant-subtitle { 
     font-family: 'Pinyon Script', cursive; 
-    font-size: clamp(3rem, 12vw, 4.2rem); 
+    font-size: clamp(2.8rem, 10vw, 4.2rem); 
     color: #3e4e41; font-weight: 400; margin-bottom: 20px;
 }
 
-/* --- FOTOS E INTERACCIÓN --- */
-.photo-section { width: 100%; background-color: #fcfcfc; padding: 60px 20px; display: flex; justify-content: center; }
+/* --- FOTOS --- */
+.photo-section { width: 100%; background-color: #fcfcfc; padding: 40px 20px; display: flex; justify-content: center; }
 .photo-frame { 
-    background: white; padding: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.06); 
-    border: 1px solid #eee; max-width: 420px; transform: rotate(-1deg); padding-bottom: 30px;
-    cursor: pointer; user-select: none; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: white; padding: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); 
+    border: 1px solid #eee; max-width: 420px; width: 100%; transform: rotate(-1deg);
+    cursor: pointer; user-select: none; will-change: transform;
 }
 .couple-img { width: 100%; height: auto; display: block; pointer-events: none; }
-
 .photo-caption {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem; font-weight: 400; color: #3e4e41; text-align: center;
-    margin-top: 20px; line-height: 1.8; letter-spacing: 2.5px;
-    text-transform: uppercase; opacity: 0.75;
+    font-size: 0.75rem; font-weight: 400; color: #3e4e41; text-align: center;
+    margin-top: 15px; line-height: 1.6; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.75;
 }
 
 @keyframes photoShake {
-    0% { transform: rotate(0deg) scale(1.02); }
+    0%, 100% { transform: rotate(0deg) scale(1.02); }
     25% { transform: rotate(-2deg) scale(1.02); }
-    50% { transform: rotate(2deg) scale(1.02); }
-    75% { transform: rotate(-1deg) scale(1.02); }
-    100% { transform: rotate(0deg) scale(1.02); }
+    75% { transform: rotate(2deg) scale(1.02); }
 }
-.click-shake { animation: photoShake 0.5s both; }
+.click-shake { animation: photoShake 0.4s ease-in-out; }
 
 /* --- UBICACIONES --- */
 .locations-section { padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
-.location-container { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; max-width: 1000px; width: 100%; }
+.location-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 1000px; }
 .location-card { 
-    background: #fff; padding: 40px 25px; text-align: center; border: 1px solid #f2f2f2; 
-    flex: 1; min-width: 300px; min-height: 480px;
-    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    background: #fff; padding: 30px 20px; text-align: center; border: 1px solid #f2f2f2; 
+    flex: 1; min-width: 280px; display: flex; flex-direction: column; align-items: center; justify-content: space-between;
 }
-.inner-godparents { margin: 20px 0; padding-top: 20px; border-top: 1px solid #f0efed; }
-.role-mini { font-size: 0.65rem; color: #a68b6d; text-transform: uppercase; letter-spacing: 2px; }
+.inner-godparents { margin: 15px 0; padding-top: 15px; border-top: 1px solid #f0efed; }
+.role-mini { font-size: 0.6rem; color: #a68b6d; text-transform: uppercase; letter-spacing: 1.5px; }
 .maps-button { 
-    display: inline-block; padding: 12px 25px; border: 1px solid #a68b6d; color: #a68b6d; 
-    text-decoration: none; font-size: 0.75rem; transition: 0.3s; letter-spacing: 2px;
+    display: inline-block; padding: 10px 20px; border: 1px solid #a68b6d; color: #a68b6d; 
+    text-decoration: none; font-size: 0.7rem; letter-spacing: 1.5px; margin-top: 15px;
 }
-.maps-button:hover { background: #a68b6d; color: white; }
 
 /* --- DRESS CODE --- */
-.dress-code-container { 
-    margin: 60px auto; text-align: center; padding: 60px 20px; background: #faf8f6; 
-    width: 100%; display: flex; flex-direction: column; align-items: center;
-}
-.gender { color: #a68b6d; letter-spacing: 2px; }
-.gender-sep { margin: 0 15px; color: #d1c7bd; }
+.dress-code-container { margin: 40px auto; text-align: center; padding: 40px 20px; background: #faf8f6; width: 100%; }
+.gender { color: #a68b6d; letter-spacing: 1px; }
+.gender-sep { margin: 0 10px; color: #d1c7bd; }
 
-/* --- RSVP CENTRADO --- */
-.rsvp-final-section { 
-    padding: 100px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;
-}
+/* --- RSVP --- */
+.rsvp-final-section { padding: 60px 20px; display: flex; justify-content: center; width: 100%; }
 .rsvp-button { 
-    background: #a68b6d; color: white; padding: 18px 45px; text-decoration: none; 
-    letter-spacing: 2px; transition: 0.3s; box-shadow: 0 5px 15px rgba(166, 139, 109, 0.2);
+    background: #a68b6d; color: white; padding: 16px 35px; text-decoration: none; 
+    letter-spacing: 2px; font-size: 0.8rem; box-shadow: 0 4px 10px rgba(166, 139, 109, 0.2);
 }
 
-/* --- ANIMACIONES REVEAL --- */
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; visibility: hidden; }
+/* --- ANIMACIONES REVEAL (Fix de visibilidad) --- */
+.reveal { 
+    opacity: 0; transform: translateY(20px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+    visibility: hidden; will-change: opacity, transform;
+}
 .reveal.active { opacity: 1; transform: translateY(0); visibility: visible; }
-.reveal-img { opacity: 0; transform: scale(0.95) translateY(30px); transition: all 1s ease-out; }
+
+.reveal-img { 
+    opacity: 0; transform: scale(0.98) translateY(20px); 
+    transition: opacity 1s ease-out, transform 1s ease-out; 
+    will-change: opacity, transform;
+}
 .reveal-img.active { opacity: 1; transform: scale(1) translateY(0); }
 
-.audio-container { position: fixed; bottom: 20px; left: 20px; z-index: 1000; }
-.audio-control { background: white; border: 1px solid #a68b6d; color: #a68b6d; padding: 10px 18px; border-radius: 50px; cursor: pointer; font-size: 0.65rem; }
+.audio-container { position: fixed; bottom: 15px; left: 15px; z-index: 1000; }
+.audio-control { background: rgba(255,255,255,0.9); border: 1px solid #a68b6d; color: #a68b6d; padding: 8px 15px; border-radius: 50px; font-size: 0.6rem; cursor: pointer; }
 
 @media (max-width: 768px) {
     .gender-sep { display: none; }
     .mobile-break { display: block; }
+    .hero-view { height: 90vh; }
 }
 
 
