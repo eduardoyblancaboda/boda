@@ -1,139 +1,304 @@
 /* --- CONFIGURACIÓN GLOBAL --- */
-* { box-sizing: border-box; }
+* { 
+    box-sizing: border-box; 
+}
+
 body, html {
-    margin: 0; padding: 0;
-    width: 100%; overflow-x: hidden;
+    margin: 0; 
+    padding: 0;
+    width: 100%; 
+    overflow-x: hidden;
     scroll-behavior: smooth;
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
+    color: #3e4e41;
 }
 
-/* --- PORTADA --- */
+/* --- PORTADA (HERO) --- */
 .hero-view {
-    width: 100%; height: 100vh;
-    display: flex; justify-content: center; align-items: center;
-    position: relative; overflow: hidden;
+    width: 100%; 
+    height: 100vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    position: relative; 
+    overflow: hidden;
 }
+
 .floral-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('flores.png'); background-size: cover; background-position: center;
-    z-index: 1; pointer-events: none; opacity: 0.6;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-image: url('flores.png'); 
+    background-size: cover; 
+    background-position: center;
+    z-index: 1; 
+    pointer-events: none; 
+    opacity: 0.6;
 }
-.main-content { position: relative; z-index: 2; text-align: center; width: 90%; }
+
+.main-content { 
+    position: relative; 
+    z-index: 2; 
+    text-align: center; 
+    width: 90%; 
+}
 
 .elegant-name {
     font-family: 'Pinyon Script', cursive;
     font-size: clamp(4rem, 18vw, 7.5rem);
-    color: #3e4e41; line-height: 0.8; font-weight: 400; margin: 0;
+    color: #3e4e41; 
+    line-height: 0.8; 
+    font-weight: 400; 
+    margin: 0;
 }
+
 .ampersand {
     font-family: 'Pinyon Script', cursive;
     font-size: clamp(2.5rem, 10vw, 4rem);
-    color: #a68b6d; display: block; margin: 10px 0;
+    color: #a68b6d; 
+    display: block; 
+    margin: 10px 0;
 }
-.anniversary-badge { color: #a68b6d; font-style: italic; font-size: 1.2rem; margin-bottom: 1rem; }
-.event-info { letter-spacing: 3px; text-transform: uppercase; color: #3e4e41; font-size: 0.9rem; line-height: 1.8; }
 
-/* --- TÍTULOS DE SECCIONES --- */
-.elegant-subtitle {
-    font-family: 'Pinyon Script', cursive;
-    font-size: clamp(3rem, 12vw, 4.5rem);
-    color: #3e4e41;
+.anniversary-badge { 
+    color: #a68b6d; 
+    font-style: italic; 
+    font-size: 1.2rem; 
+    margin-bottom: 1rem; 
+}
+
+.event-info { 
+    letter-spacing: 3px; 
+    text-transform: uppercase; 
+    color: #3e4e41; 
+    font-size: 0.85rem; 
+    line-height: 1.8; 
+}
+
+/* --- TÍTULOS DE SECCIONES (REFINADOS) --- */
+.elegant-subtitle { 
+    font-family: 'Pinyon Script', cursive; 
+    font-size: clamp(3rem, 12vw, 4.5rem); 
+    color: #3e4e41; 
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
 }
 
-/* --- SECCIONES COMUNES --- */
-.quote-section { padding: 80px 20px; text-align: center; }
+/* --- SECCIONES DE FRASES --- */
+.quote-section { 
+    padding: 80px 20px; 
+    text-align: center; 
+}
+
 .special-quote { 
     font-family: 'Pinyon Script', cursive; 
     font-size: clamp(2rem, 6vw, 3rem); 
     color: #3e4e41; 
     margin-bottom: 10px; 
 }
-.quote-author { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: #a68b6d; }
 
-/* --- FOTO PRINCIPAL --- */
-.photo-section { width: 100%; background-color: #fcfcfc; display: flex; justify-content: center; padding: 60px 20px; }
+.quote-author { 
+    font-size: 0.8rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    color: #a68b6d; 
+}
+
+/* --- FOTO SECTIONS Y PIE DE FOTO --- */
+.photo-section { 
+    width: 100%; 
+    background-color: #fcfcfc; 
+    display: flex; 
+    justify-content: center; 
+    padding: 60px 20px; 
+}
+
 .photo-frame { 
-    background: white; padding: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
-    border: 1px solid #eee; max-width: 450px; transform: rotate(-1deg); 
-    border-bottom: 45px solid white;
+    background: white; 
+    padding: 15px; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08); 
+    border: 1px solid #eee; 
+    max-width: 450px; 
+    transform: rotate(-1deg); 
+    padding-bottom: 30px; /* Espacio para el pie de foto */
 }
-.couple-img { width: 100%; height: auto; display: block; }
-.caption-names { 
-    font-family: 'Pinyon Script', cursive; 
-    font-size: 3rem; 
+
+.couple-img { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.photo-caption {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #3e4e41;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    font-style: italic;
+}
+
+/* --- UBICACIONES Y PADRINOS INTEGRADOS --- */
+.locations-section { 
+    padding: 40px 20px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.location-container { 
+    display: flex; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    max-width: 1000px; 
+}
+
+.location-card { 
+    background: #fff; 
+    padding: 40px 25px; 
     text-align: center; 
-    margin-top: 15px; 
-    color: #3e4e41; 
+    border: 1px solid #f2f2f2; 
+    flex: 1; 
+    min-width: 300px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
 }
 
-/* --- PADRINOS Y UBICACIONES --- */
-.godparents-section { padding: 60px 20px; text-align: center; }
-.role { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: #a68b6d; margin-bottom: 10px; }
-.godparent-name { font-size: 1.2rem; color: #3e4e41; line-height: 1.6; }
+.location-icon { 
+    font-size: 2rem; 
+    display: block; 
+    margin-bottom: 10px; 
+}
 
-.locations-section { padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
-.location-container { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; max-width: 1000px; }
-.location-card { background: #fff; padding: 40px 25px; text-align: center; border: 1px solid #f2f2f2; flex: 1; min-width: 300px; }
-.location-icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+.inner-godparents {
+    margin: 25px 0;
+    padding-top: 25px;
+    border-top: 1px solid #f0efed;
+}
+
+.role-mini {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a68b6d;
+    margin-bottom: 10px;
+}
+
+.godparent-name-mini {
+    font-size: 1rem;
+    color: #3e4e41;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
 .maps-button { 
-    display: inline-block; margin-top: 20px; padding: 12px 25px; 
-    border: 1px solid #a68b6d; color: #a68b6d; text-decoration: none; 
-    font-size: 0.7rem; letter-spacing: 2px; transition: 0.3s; 
+    display: inline-block; 
+    margin-top: 20px; 
+    padding: 12px 25px; 
+    border: 1px solid #a68b6d; 
+    color: #a68b6d; 
+    text-decoration: none; 
+    font-size: 0.7rem; 
+    letter-spacing: 2px; 
+    transition: all 0.3s ease; 
 }
-.maps-button:hover { background: #a68b6d; color: white; }
+
+.maps-button:hover { 
+    background: #a68b6d; 
+    color: white; 
+}
 
 /* --- DRESS CODE --- */
-.dress-code-container { margin-top: 50px; text-align: center; padding: 40px; background: #faf8f6; width: 100%; }
-.dress-type { font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; color: #a68b6d; line-height: 1.8; }
-.dress-note { font-size: 0.85rem; color: #3e4e41; margin-top: 15px; font-style: italic; }
-
-/* --- GALERÍA --- */
-.gallery-section { padding: 80px 15px; text-align: center; max-width: 1000px; margin: 0 auto; }
-.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-.gallery-item { overflow: hidden; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); aspect-ratio: 2 / 3; background: #eee; }
-.gallery-img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform 0.4s ease; display: block; }
-.gallery-img:hover { transform: scale(1.05); }
-
-/* --- LIGHTBOX ANIMADO --- */
-.lightbox {
-    display: flex; position: fixed; z-index: 2000; top: 0; left: 0;
-    width: 100%; height: 100%; background: rgba(0, 0, 0, 0);
-    justify-content: center; align-items: center;
-    backdrop-filter: blur(0px); visibility: hidden; 
-    transition: background 0.4s ease, backdrop-filter 0.4s ease, visibility 0.4s;
+.dress-code-container { 
+    margin-top: 50px; 
+    text-align: center; 
+    padding: 60px 20px; 
+    background: #faf8f6; 
+    width: 100%; 
 }
-.lightbox.active { visibility: visible; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(8px); }
-.lightbox img { 
-    max-width: 90%; max-height: 80%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transform: scale(0.5); opacity: 0;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+
+.dress-type { 
+    font-size: 1rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    color: #a68b6d; 
+    line-height: 1.6;
 }
-.lightbox.active img { transform: scale(1); opacity: 1; }
-.close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 50px; cursor: pointer; line-height: 1; }
+
+.dress-note {
+    font-size: 0.85rem;
+    margin-top: 15px;
+    font-style: italic;
+    color: #3e4e41;
+}
 
 /* --- RSVP Y AUDIO --- */
-.rsvp-final-section { padding: 80px 20px; text-align: center; }
-.rsvp-button { background: #a68b6d; color: white; padding: 18px 45px; text-decoration: none; letter-spacing: 3px; font-size: 0.8rem; transition: 0.3s; display: inline-block; }
-.rsvp-button:hover { background: #3e4e41; transform: translateY(-3px); }
+.rsvp-final-section { 
+    padding: 100px 20px; 
+    text-align: center; 
+}
 
-.audio-container { position: fixed; bottom: 20px; left: 20px; z-index: 1000; }
-.audio-control { background: white; border: 1px solid #a68b6d; color: #a68b6d; padding: 10px 18px; border-radius: 50px; cursor: pointer; font-size: 0.65rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.rsvp-button { 
+    background: #a68b6d; 
+    color: white; 
+    padding: 18px 45px; 
+    text-decoration: none; 
+    letter-spacing: 3px; 
+    font-size: 0.8rem; 
+    transition: all 0.3s ease; 
+    display: inline-block; 
+}
+
+.rsvp-button:hover { 
+    background: #3e4e41; 
+    transform: translateY(-3px); 
+}
+
+.audio-container { 
+    position: fixed; 
+    bottom: 20px; 
+    left: 20px; 
+    z-index: 1000; 
+}
+
+.audio-control { 
+    background: white; 
+    border: 1px solid #a68b6d; 
+    color: #a68b6d; 
+    padding: 10px 18px; 
+    border-radius: 50px; 
+    cursor: pointer; 
+    font-size: 0.65rem; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
 /* --- ANIMACIONES --- */
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(30px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+
 .anim-name-1 { animation: fadeInUp 1.5s forwards; }
 .anim-fade { opacity: 0; animation: fadeIn 1s 1.2s forwards; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .anim-name-2 { animation: fadeInUp 1.5s 2s forwards; opacity: 0; }
 .anim-details { opacity: 0; animation: fadeIn 1.5s 3.2s forwards; }
 
-/* --- MOBILE --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .elegant-name { font-size: 4.5rem; }
-    .elegant-subtitle { font-size: 3.5rem; }
+    .elegant-subtitle { font-size: 3.2rem; }
+    .location-card { min-width: 100%; }
 }
 
 
