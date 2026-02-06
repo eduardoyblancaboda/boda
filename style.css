@@ -1,305 +1,120 @@
 /* --- CONFIGURACIÓN GLOBAL --- */
-* { 
-    box-sizing: border-box; 
-}
-
+* { box-sizing: border-box; }
 body, html {
-    margin: 0; 
-    padding: 0;
-    width: 100%; 
-    overflow-x: hidden;
+    margin: 0; padding: 0;
+    width: 100%; overflow-x: hidden;
     scroll-behavior: smooth;
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     color: #3e4e41;
 }
 
-/* --- PORTADA (HERO) --- */
+/* --- PORTADA --- */
 .hero-view {
-    width: 100%; 
-    height: 100vh;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    position: relative; 
-    overflow: hidden;
+    width: 100%; height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    position: relative; overflow: hidden;
 }
-
 .floral-overlay {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    background-image: url('flores.png'); 
-    background-size: cover; 
-    background-position: center;
-    z-index: 1; 
-    pointer-events: none; 
-    opacity: 0.6;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('flores.png'); background-size: cover;
+    z-index: 1; pointer-events: none; opacity: 0.5;
+    transition: transform 0.2s ease-out;
 }
-
-.main-content { 
-    position: relative; 
-    z-index: 2; 
-    text-align: center; 
-    width: 90%; 
-}
+.main-content { position: relative; z-index: 2; text-align: center; }
 
 .elegant-name {
     font-family: 'Pinyon Script', cursive;
     font-size: clamp(4rem, 18vw, 7.5rem);
-    color: #3e4e41; 
-    line-height: 0.8; 
-    font-weight: 400; 
-    margin: 0;
+    color: #3e4e41; line-height: 0.8; font-weight: 400; margin: 0;
 }
-
 .ampersand {
     font-family: 'Pinyon Script', cursive;
     font-size: clamp(2.5rem, 10vw, 4rem);
-    color: #a68b6d; 
-    display: block; 
-    margin: 10px 0;
+    color: #a68b6d; display: block; margin: 10px 0;
 }
+.anniversary-badge { color: #a68b6d; font-style: italic; font-size: 1.2rem; }
+.event-info { letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; }
 
-.anniversary-badge { 
-    color: #a68b6d; 
-    font-style: italic; 
-    font-size: 1.2rem; 
-    margin-bottom: 1rem; 
-}
-
-.event-info { 
-    letter-spacing: 3px; 
-    text-transform: uppercase; 
-    color: #3e4e41; 
-    font-size: 0.85rem; 
-    line-height: 1.8; 
-}
-
-/* --- TÍTULOS DE SECCIONES (REFINADOS) --- */
+/* --- TÍTULOS --- */
 .elegant-subtitle { 
     font-family: 'Pinyon Script', cursive; 
-    font-size: clamp(3rem, 12vw, 4.5rem); 
-    color: #3e4e41; 
-    font-weight: 400;
-    margin-bottom: 20px; 
+    font-size: clamp(3rem, 12vw, 4.2rem); 
+    color: #3e4e41; font-weight: 400; margin-bottom: 20px;
 }
 
-/* --- SECCIONES DE FRASES --- */
-.quote-section { 
-    padding: 80px 20px; 
-    text-align: center; 
-}
-
-.special-quote { 
-    font-family: 'Pinyon Script', cursive; 
-    font-size: clamp(2rem, 6vw, 3rem); 
-    color: #3e4e41; 
-    margin-bottom: 10px; 
-}
-
-.quote-author { 
-    font-size: 0.8rem; 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    color: #a68b6d; 
-}
-
-/* --- FOTO SECTIONS Y PIE DE FOTO --- */
-.photo-section { 
-    width: 100%; 
-    background-color: #fcfcfc; 
-    display: flex; 
-    justify-content: center; 
-    padding: 60px 20px; 
-}
-
+/* --- FOTOS E INTERACCIÓN --- */
+.photo-section { width: 100%; background-color: #fcfcfc; padding: 60px 20px; display: flex; justify-content: center; }
 .photo-frame { 
-    background: white; 
-    padding: 15px; 
-    box-shadow: 0 20px 50px rgba(0,0,0,0.08); 
-    border: 1px solid #eee; 
-    max-width: 450px; 
-    transform: rotate(-1deg); 
-    padding-bottom: 30px; /* Espacio para el pie de foto */
+    background: white; padding: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.06); 
+    border: 1px solid #eee; max-width: 420px; transform: rotate(-1deg); padding-bottom: 30px;
+    cursor: pointer; user-select: none; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
-.couple-img { 
-    width: 100%; 
-    height: auto; 
-    display: block; 
-}
+.couple-img { width: 100%; height: auto; display: block; pointer-events: none; }
 
 .photo-caption {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: #3e4e41;
-    text-align: center;
-    margin-top: 20px;
-    line-height: 1.5;
-    letter-spacing: 0.5px;
-    font-style: italic;
+    font-size: 0.8rem; font-weight: 400; color: #3e4e41; text-align: center;
+    margin-top: 20px; line-height: 1.8; letter-spacing: 2.5px;
+    text-transform: uppercase; opacity: 0.75;
 }
 
-/* --- UBICACIONES Y PADRINOS INTEGRADOS --- */
-.locations-section { 
-    padding: 40px 20px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+@keyframes photoShake {
+    0% { transform: rotate(0deg) scale(1.02); }
+    25% { transform: rotate(-2deg) scale(1.02); }
+    50% { transform: rotate(2deg) scale(1.02); }
+    75% { transform: rotate(-1deg) scale(1.02); }
+    100% { transform: rotate(0deg) scale(1.02); }
 }
+.click-shake { animation: photoShake 0.5s both; }
 
-.location-container { 
-    display: flex; 
-    gap: 30px; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    max-width: 1000px; 
-}
-
+/* --- UBICACIONES --- */
+.locations-section { padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
+.location-container { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; max-width: 1000px; width: 100%; }
 .location-card { 
-    background: #fff; 
-    padding: 40px 25px; 
-    text-align: center; 
-    border: 1px solid #f2f2f2; 
-    flex: 1; 
-    min-width: 300px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    background: #fff; padding: 40px 25px; text-align: center; border: 1px solid #f2f2f2; 
+    flex: 1; min-width: 300px; min-height: 480px;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
 }
-
-.location-icon { 
-    font-size: 2rem; 
-    display: block; 
-    margin-bottom: 10px; 
-}
-
-.inner-godparents {
-    margin: 25px 0;
-    padding-top: 25px;
-    border-top: 1px solid #f0efed;
-}
-
-.role-mini {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #a68b6d;
-    margin-bottom: 10px;
-}
-
-.godparent-name-mini {
-    font-size: 1rem;
-    color: #3e4e41;
-    line-height: 1.5;
-    font-weight: 300;
-}
-
+.inner-godparents { margin: 20px 0; padding-top: 20px; border-top: 1px solid #f0efed; }
+.role-mini { font-size: 0.65rem; color: #a68b6d; text-transform: uppercase; letter-spacing: 2px; }
 .maps-button { 
-    display: inline-block; 
-    margin-top: 20px; 
-    padding: 12px 25px; 
-    border: 1px solid #a68b6d; 
-    color: #a68b6d; 
-    text-decoration: none; 
-    font-size: 0.7rem; 
-    letter-spacing: 2px; 
-    transition: all 0.3s ease; 
+    display: inline-block; padding: 12px 25px; border: 1px solid #a68b6d; color: #a68b6d; 
+    text-decoration: none; font-size: 0.75rem; transition: 0.3s; letter-spacing: 2px;
 }
-
-.maps-button:hover { 
-    background: #a68b6d; 
-    color: white; 
-}
+.maps-button:hover { background: #a68b6d; color: white; }
 
 /* --- DRESS CODE --- */
 .dress-code-container { 
-    margin-top: 50px; 
-    text-align: center; 
-    padding: 60px 20px; 
-    background: #faf8f6; 
-    width: 100%; 
+    margin: 60px auto; text-align: center; padding: 60px 20px; background: #faf8f6; 
+    width: 100%; display: flex; flex-direction: column; align-items: center;
 }
+.gender { color: #a68b6d; letter-spacing: 2px; }
+.gender-sep { margin: 0 15px; color: #d1c7bd; }
 
-.dress-type { 
-    font-size: 1rem; 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    color: #a68b6d; 
-    line-height: 1.6;
-}
-
-.dress-note {
-    font-size: 0.85rem;
-    margin-top: 15px;
-    font-style: italic;
-    color: #3e4e41;
-}
-
-/* --- RSVP Y AUDIO --- */
+/* --- RSVP CENTRADO --- */
 .rsvp-final-section { 
-    padding: 100px 20px; 
-    text-align: center; 
+    padding: 100px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;
 }
-
 .rsvp-button { 
-    background: #a68b6d; 
-    color: white; 
-    padding: 18px 45px; 
-    text-decoration: none; 
-    letter-spacing: 3px; 
-    font-size: 0.8rem; 
-    transition: all 0.3s ease; 
-    display: inline-block; 
+    background: #a68b6d; color: white; padding: 18px 45px; text-decoration: none; 
+    letter-spacing: 2px; transition: 0.3s; box-shadow: 0 5px 15px rgba(166, 139, 109, 0.2);
 }
 
-.rsvp-button:hover { 
-    background: #3e4e41; 
-    transform: translateY(-3px); 
-}
+/* --- ANIMACIONES REVEAL --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; visibility: hidden; }
+.reveal.active { opacity: 1; transform: translateY(0); visibility: visible; }
+.reveal-img { opacity: 0; transform: scale(0.95) translateY(30px); transition: all 1s ease-out; }
+.reveal-img.active { opacity: 1; transform: scale(1) translateY(0); }
 
-.audio-container { 
-    position: fixed; 
-    bottom: 20px; 
-    left: 20px; 
-    z-index: 1000; 
-}
+.audio-container { position: fixed; bottom: 20px; left: 20px; z-index: 1000; }
+.audio-control { background: white; border: 1px solid #a68b6d; color: #a68b6d; padding: 10px 18px; border-radius: 50px; cursor: pointer; font-size: 0.65rem; }
 
-.audio-control { 
-    background: white; 
-    border: 1px solid #a68b6d; 
-    color: #a68b6d; 
-    padding: 10px 18px; 
-    border-radius: 50px; 
-    cursor: pointer; 
-    font-size: 0.65rem; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* --- ANIMACIONES --- */
-@keyframes fadeInUp { 
-    from { opacity: 0; transform: translateY(30px); } 
-    to { opacity: 1; transform: translateY(0); } 
-}
-
-@keyframes fadeIn { 
-    from { opacity: 0; } 
-    to { opacity: 1; } 
-}
-
-.anim-name-1 { animation: fadeInUp 1.5s forwards; }
-.anim-fade { opacity: 0; animation: fadeIn 1s 1.2s forwards; }
-.anim-name-2 { animation: fadeInUp 1.5s 2s forwards; opacity: 0; }
-.anim-details { opacity: 0; animation: fadeIn 1.5s 3.2s forwards; }
-
-/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .elegant-name { font-size: 4.5rem; }
-    .elegant-subtitle { font-size: 3.2rem; }
-    .location-card { min-width: 100%; }
+    .gender-sep { display: none; }
+    .mobile-break { display: block; }
 }
+
 
 
 
