@@ -1,4 +1,3 @@
-// Única función: Aparecer elementos al bajar la página
 const initReveal = () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -7,12 +6,11 @@ const initReveal = () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05 }); // Activación más temprana para secciones largas
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 };
 
-// Control de Música
 function togglePlay() {
     const audio = document.getElementById("background-music");
     const btn = document.getElementById("audioBtn");
