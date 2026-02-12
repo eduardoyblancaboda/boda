@@ -1,13 +1,11 @@
 /* --- CONFIGURACIÓN GLOBAL --- */
 * { box-sizing: border-box; }
-
-html, body {
+body, html {
     margin: 0; padding: 0;
     width: 100%; overflow-x: hidden;
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     color: #3e4e41;
-    -webkit-overflow-scrolling: touch;
 }
 
 /* --- PORTADA --- */
@@ -19,88 +17,109 @@ html, body {
 .floral-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-image: url('flores.png'); background-size: cover;
-    opacity: 0.4; z-index: 0;
+    opacity: 0.35; z-index: 0;
 }
-.main-content { z-index: 1; padding: 20px; }
+.main-content { z-index: 1; }
+.elegant-name { font-family: 'Pinyon Script', cursive; font-size: clamp(4rem, 18vw, 7.5rem); margin: 0; font-weight: 400; }
+.ampersand { font-family: 'Pinyon Script', cursive; font-size: 3rem; color: #a68b6d; margin: -10px 0; }
 
-.elegant-name { 
-    font-family: 'Pinyon Script', cursive; 
-    font-size: clamp(4rem, 18vw, 7.5rem); 
-    margin: 0; font-weight: 400; 
+/* --- SECCIONES DE FOTO CON DIFUMINADO AUMENTADO --- */
+.photo-bg-section {
+    position: relative;
+    width: 100%; 
+    height: 120vh; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 120px 0; /* Aumentamos margen para que luzca el difuminado */
+    
+    /* MÁSCARA CON DIFUMINADO MÁS LARGO Y PROFUNDO */
+    -webkit-mask-image: linear-gradient(to bottom, 
+        transparent 0%, 
+        black 25%,   /* La foto tarda más en volverse sólida */
+        black 75%,   /* La foto empieza a desvanecerse antes */
+        transparent 100%);
+    mask-image: linear-gradient(to bottom, 
+        transparent 0%, 
+        black 25%, 
+        black 75%, 
+        transparent 100%);
 }
-.ampersand { 
-    font-family: 'Pinyon Script', cursive; 
-    font-size: 3rem; color: #a68b6d; margin: -10px 0; 
-}
-.anniversary-badge { color: #a68b6d; font-style: italic; font-size: 1.1rem; margin-top: 10px; }
-.event-info { letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin-top: 20px; }
 
-/* --- TÍTULOS --- */
-.elegant-subtitle { 
-    font-family: 'Pinyon Script', cursive; 
-    font-size: clamp(3rem, 12vw, 4.2rem); 
-    color: #3e4e41; font-weight: 400; margin-bottom: 20px;
+.photo-overlay { 
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background: rgba(255, 255, 255, 0.05); /* Un velo mínimo para suavizar la imagen */
 }
 
-/* --- FOTOS --- */
-.photo-section { padding: 40px 20px; display: flex; justify-content: center; }
-.photo-frame { 
-    background: white; padding: 15px; border: 1px solid #eee; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 420px; width: 100%;
+.photo-content { 
+    background: rgba(255, 255, 255, 0.88); /* Ligeramente más opaco para resaltar contra el difuminado */
+    padding: 50px 40px; 
+    text-align: center; 
+    max-width: 85%; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.02);
 }
-.couple-img { width: 100%; height: auto; display: block; }
-.photo-caption { 
-    font-size: 0.8rem; font-weight: 300; text-align: center; 
-    margin-top: 15px; letter-spacing: 2px; text-transform: uppercase; 
+
+.photo-caption-overlay {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200; /* Delgada y elegante */
+    font-size: 0.85rem; 
+    letter-spacing: 2.5px; 
+    text-transform: uppercase; 
+    line-height: 2; 
+    color: #3e4e41;
 }
 
 /* --- UBICACIONES --- */
-.locations-section { padding: 40px 20px; }
-.location-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-.location-card { 
-    background: #fff; padding: 35px 20px; text-align: center; border: 1px solid #f2f2f2; 
-    flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center;
-}
-.inner-godparents { margin: 15px 0; padding-top: 15px; border-top: 1px solid #f0efed; width: 100%; }
-.role-mini { font-size: 0.65rem; color: #a68b6d; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
-
-/* --- BOTONES --- */
-.maps-button, .rsvp-button { 
-    display: inline-block; padding: 12px 25px; border: 1px solid #a68b6d; 
-    color: #a68b6d; text-decoration: none; font-size: 0.75rem; 
-    margin-top: 20px; letter-spacing: 2px; transition: 0.3s;
-}
-
-/* --- RSVP CENTRADO --- */
-.rsvp-final-section { 
-    padding: 80px 20px 120px 20px; 
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    width: 100%; text-align: center;
-}
-.rsvp-button { 
-    background: #a68b6d; color: white; padding: 18px 45px; 
-    font-size: 0.85rem; border: none; box-shadow: 0 5px 15px rgba(166, 139, 109, 0.2); 
-}
+.locations-section { padding: 100px 20px; text-align: center; }
+.location-container { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; max-width: 1100px; margin: 0 auto; }
+.location-card { background: #fff; padding: 45px 25px; border: 1px solid #f2f2f2; flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; }
+.elegant-subtitle { font-family: 'Pinyon Script', cursive; font-size: clamp(3rem, 12vw, 4rem); margin-bottom: 25px; font-weight: 400; }
 
 /* --- DRESS CODE --- */
-.dress-code-container { margin: 60px auto; text-align: center; padding: 60px 20px; background: #faf8f6; width: 100%; }
-.gender { color: #a68b6d; letter-spacing: 1px; }
+.dress-code-container { 
+    margin: 80px auto; 
+    padding: 60px 20px; 
+    background: #faf8f6; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+}
+.dress-type { 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 200; 
+    font-size: 0.9rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2.5px; 
+    line-height: 2.2;
+}
+.gender { color: #a68b6d; font-weight: 400; }
 .gender-sep { margin: 0 15px; color: #d1c7bd; }
-.mobile-break { display: none; }
 
-/* --- ANIMACIÓN ÚNICA (REVEAL) --- */
-.reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+/* --- RSVP --- */
+.rsvp-final-section { padding: 80px 20px 120px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
+.rsvp-button { background: #a68b6d; color: white; padding: 20px 55px; text-decoration: none; letter-spacing: 2px; font-weight: 300; font-size: 0.9rem; }
+.maps-button { display: inline-block; padding: 12px 30px; border: 1px solid #a68b6d; color: #a68b6d; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; margin-top: 25px; }
+
+/* --- ANIMACIONES --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* --- AUDIO --- */
-.audio-container { position: fixed; bottom: 20px; left: 20px; z-index: 100; }
-.audio-control { background: #fff; border: 1px solid #a68b6d; padding: 10px 18px; border-radius: 50px; font-size: 0.65rem; color: #a68b6d; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.audio-container { position: fixed; bottom: 25px; left: 25px; z-index: 100; }
+.audio-control { background: #fff; border: 1px solid #a68b6d; padding: 10px 18px; border-radius: 50px; font-size: 0.65rem; color: #a68b6d; cursor: pointer; }
 
 @media (max-width: 768px) {
+    .photo-bg-section { height: 100vh; } /* Un poco más corta en móviles pero aún generosa */
     .gender-sep { display: none; }
     .mobile-break { display: block; }
-    .elegant-name { font-size: 4.5rem; }
 }
+
 
 
 
