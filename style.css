@@ -8,7 +8,7 @@ body, html {
     color: #3e4e41;
 }
 
-/* --- PORTADA --- */
+/* --- PORTADA Y AJUSTE DE NOMBRES --- */
 .hero-view {
     width: 100%; height: 100vh;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -19,13 +19,39 @@ body, html {
     background-image: url('flores.png'); background-size: cover;
     opacity: 0.35; z-index: 0;
 }
-.main-content { z-index: 1; }
-.elegant-name { font-family: 'Pinyon Script', cursive; font-size: clamp(4rem, 18vw, 7.5rem); margin: 0; font-weight: 400; }
-.ampersand { font-family: 'Pinyon Script', cursive; font-size: 3rem; color: #a68b6d; margin: -10px 0; }
-.anniversary-badge { color: #a68b6d; font-style: italic; font-size: 1.1rem; margin-top: 10px; font-weight: 300; }
-.event-info { letter-spacing: 2.5px; text-transform: uppercase; font-size: 0.8rem; margin-top: 20px; font-weight: 200; }
+.main-content { 
+    z-index: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.elegant-name { 
+    font-family: 'Pinyon Script', cursive; 
+    font-size: clamp(4.5rem, 18vw, 7.5rem); 
+    margin: 0; 
+    font-weight: 400;
+    line-height: 0.7; 
+}
 
-/* --- SECCIONES DE FOTO CON MARGEN --- */
+/* Eduardo en su posición */
+.name-top {
+    transform: translateY(15px); 
+}
+
+/* La "y" ahora más separada de Blanca */
+.ampersand { 
+    font-family: 'Pinyon Script', cursive; 
+    font-size: clamp(2.5rem, 10vw, 3.5rem); 
+    color: #a68b6d; 
+    margin-top: 0px;
+    margin-bottom: 35px; /* Aumentado para subirla más */
+    display: block;
+}
+
+.anniversary-badge { color: #a68b6d; font-style: italic; font-size: 1.1rem; margin-top: 25px; font-weight: 300; }
+.event-info { letter-spacing: 2.5px; text-transform: uppercase; font-size: 0.8rem; margin-top: 15px; font-weight: 200; }
+
+/* --- SECCIONES DE FOTO --- */
 .photo-bg-section {
     position: relative;
     width: 92%;
@@ -41,7 +67,7 @@ body, html {
 /* --- UBICACIONES --- */
 .locations-section { padding: 60px 20px; text-align: center; }
 .location-container { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; max-width: 1100px; margin: 0 auto; }
-.location-card { background: #fff; padding: 45px 25px; border: 1px solid #f2f2f2; flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; }
+.location-card { background: #fff; padding: 45px 25px; border: 1px solid #f2f2f2; flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
 .elegant-subtitle { font-family: 'Pinyon Script', cursive; font-size: clamp(3rem, 12vw, 4rem); margin-bottom: 25px; font-weight: 400; }
 .location-text { font-weight: 200; letter-spacing: 1px; line-height: 1.8; }
 .inner-godparents { margin: 15px 0; padding-top: 15px; border-top: 1px solid #f0efed; width: 100%; }
@@ -56,33 +82,29 @@ body, html {
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    justify-content: center;
     text-align: center;
 }
-.dress-type { 
-    font-weight: 200; 
-    font-size: 0.9rem; 
-    text-transform: uppercase; 
-    letter-spacing: 3px; 
-    line-height: 2.2; 
-}
+.dress-type { font-weight: 200; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; line-height: 2.2; }
 .gender { color: #a68b6d; font-weight: 300; }
 .gender-sep { margin: 0 15px; color: #d1c7bd; }
 
-/* --- RSVP --- */
-.rsvp-final-section { padding: 40px 20px 100px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
-.rsvp-button { background: #a68b6d; color: white; padding: 20px 55px; text-decoration: none; letter-spacing: 2px; font-weight: 200; font-size: 0.9rem; }
+/* --- BOTONES Y RSVP --- */
+.rsvp-final-section { padding: 40px 20px 100px 20px; display: flex; justify-content: center; width: 100%; }
+.rsvp-button { background: #a68b6d; color: white; padding: 20px 55px; text-decoration: none; letter-spacing: 2px; font-weight: 200; font-size: 0.9rem; border-radius: 2px; }
 .maps-button { display: inline-block; padding: 12px 30px; border: 1px solid #a68b6d; color: #a68b6d; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; margin-top: 25px; font-weight: 200; }
 
 /* --- AUDIO --- */
 .audio-container { position: fixed; bottom: 25px; left: 25px; z-index: 100; }
-.audio-control { background: #fff; border: 1px solid #a68b6d; padding: 10px 18px; border-radius: 50px; font-size: 0.65rem; color: #a68b6d; cursor: pointer; font-family: 'Montserrat'; font-weight: 200; }
+.audio-control { background: #fff; border: 1px solid #a68b6d; padding: 10px 18px; border-radius: 50px; font-size: 0.65rem; color: #a68b6d; cursor: pointer; font-family: 'Montserrat'; font-weight: 200; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
 @media (max-width: 768px) {
-    .photo-bg-section { height: 75vh; width: 90%; margin: 30px auto; }
+    .photo-bg-section { height: 70vh; width: 90%; margin: 30px auto; }
     .gender-sep { display: none; }
     .mobile-break { display: block; }
+    .name-top { transform: translateY(10px); }
+    .ampersand { margin-bottom: 28px; } /* Proporción para móvil */
 }
+
 
 
 
